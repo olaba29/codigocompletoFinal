@@ -1,0 +1,46 @@
+									           _____           _    _         _  __
+									     /\   |  __ \     /\  | |  | |  /\   | |/ /
+									    /  \  | |__) |   /  \ | |  | | /  \  | ' / 
+									   / /\ \ |  _  /   / /\ \| |  | |/ /\ \ |  <  
+									  / ____ \| | \ \  / ____ \ |__| / ____ \| . \ 
+									 /_/    \_\_|  \_\/_/    \_\____/_/    \_\_|\_\
+                                               
+    1.1 Partida dinamika
+
+Partida batean pertsona bat (gutako batek) ordenagailuaren kontra 20 errondaz osatutako partida bat jokatuko du. Hasieran 3 pokemon esleituko zaizkigu auzaz, partida amaitu arte izango ditugunak. Rondaren arabera, entrenatzaile bakoitzak pokemon kantitate desberdin bat izango du. 5., 10. ,15. eta 20. posizioetan dauden entrenatzaileak 3 Pokemon esleituko zaizkie bakoitzari (jokalaria barne), gainontzekoei pokemon 1 esleituko zaizkie.Gainera, 10. erronda jokatu ondoren, gure pokemonen bizitza puntuak (HP) guztiz berreskuratuko dira, beste erronda guztien ostean ordea, ez. 
+
+Entrenatzaile bakoitzak (3 pokemon dituztenak) ezin izango du bere pokemon taldearen ordena aldatu, hau da, ausaz entrenatzailearen pokemon-ak esleitzerakoan listan gordetako ordenaren arabera aterako dira konbatera. Pokemon bat beste batengatik aldatuko da, uneko pokemon-aren bizitza <= 0 denean, entrenatzaileak pokemon gabe geratzekotan, hurrengo entrenatzailearen pokemon-a batailatzera pasatuko da. Lehen esan bezala, pokemon bat duten 4 entrenatzaileen kontra borrokatu egingo duzu, eta gero 3 pokemon duen beste entrenatzaile baten kontra; bukle hau 4 aldiz errepikatuko da, baldin eta zure pokemon guztiak hiltzen ez badira. 
+
+Entrenatzaile bakoitzari irabazi ondoren, diru kantitate bat emango dizute (10 euro bakoitzak), geroago 5., 10. eta 15. errondetan denda batean irabazitako dirua, mugimendu batzuk erostea ahalbidetuko dizutena zure pokemon-ei erakutsi ahal izateko.
+
+1.2 Eraso txandak
+
+Txanda bakoitzeko, abiadura handiagoa duen pokemon-ak eraso egingo du lehenengo, eta honen ostean besteak (baldin eta lehenego erasoa jaso ostean, oraindik bizitza badu). Pokemon bietako bat HP-rik (health point) gabe geratzen bada, erretiratu beharko da eta jokalariak beste pokemon bat atera behar izango du oraindik pokemon-ak geratzen bazaizkio, bestela hurrengo errondara pasatuko egingo zara. Txandaka bataila jarraituko du, jokalari bietako batek pokemon guztiak HP-rik gabe geratu arte.
+
+1.3 Pokemon-en tipoak eta haien indizea
+
+5 pokemon mota egongo dira: Ura, Sua, Landarea, Normala eta Mamua. Pokemon bakoitzaren motaren arabera Pokemon hori HP gehiago edo gutxiago galduko ditu. Gainera, pokemon erasotzailearen  eraso indizearen eta pokemon defendatzailearen indizearen arabera galduko ditu HP-ak pokemon defendatzaileak. Hau da, eraso indize handiko pokemon batek, haren mugimenduarekin HP gehiago kenduko ditu eraso indize txikiagoa daukan batek baino, suposatuz Pokemon berari erasotzen diotela(hau da, defentsa indize bera duela). Pokemon erasotzaile batek, pokemon defendatzaile bati erasotzean, hurrengo formula erabiliko dugu:
+
+
+Kolpea = efektibitatea*(((21.0*potentzia*eraso)/(25.0*defentsa))+2.0)
+
+
+
+
+Efektibitatea = pokemon erasotzailearen eta pokemon defendatzailearen tipoen arteko eralazioa.
+Potentzia = erabilitako mugimenduaren potentzia indizea
+Eraso = pokemon erasotzailearen eraso indizea
+defentsa = pokemon defendatzailearen defentsa indizea
+
+Mota erlazioak hauek izango dira: 
+
+Ur motako mugimenduak, Su motako Pokemonen kontra 2x HP gehiago kenduko dute, aldiz Landare motakoen kontra 0.5x HP kenduko dute. Beste moten kontra 1x.
+
+Landare motako mugimenduak, Ur motako Pokemonen kontra 2x HP gehiago kenduko dute, aldiz Su motakoen kontra 0.5x HP kenduko dute. Beste moten kontra 1x.
+
+Su motako mugimenduak, Landare motako Pokemonen kontra 2x HP gehiago kenduko dute, aldiz Ur motakoen kontra 0.5x HP kenduko dute. Beste moten kontra 1x.
+
+Mamua motako mugimenduak, Normala motako pokemonen kontra 0.2 HP kenduko dute. Beste moten kontra 1x HP kenduko die eta mamu moten kontra 2x.
+
+Normala motako mugimenduak, Mamua motako pokemonen kontra 0.2-ko HP kenduko dute . Beste moten kontra 1x HP kenduko die.
+                                    
